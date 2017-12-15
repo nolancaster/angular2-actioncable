@@ -37,7 +37,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     // Open a connection and obtain a reference to the channel
-    const channel: Channel = this.cableService.cable('ws://cable.example.com').channel('ChatChannel', {room : 'Best Room'});
+    const channel: Channel = this.cableService
+      .cable('ws://cable.example.com')
+      .channel('ChatChannel', {room : 'Best Room'});
 
     // Subscribe to incoming messages
     this.subscription = channel.messages.subscribe(message => {
