@@ -6,7 +6,7 @@ export class ActionCableService {
   private cables: {[s: string]: Cable} = {};
 
   /**
-   * Create a new ActionCable connection to the given url
+   * Open a new ActionCable connection to the url. Any number of connections can be created.
    */
   cable(url: string): Cable {
     if (!this.cables.hasOwnProperty(url)) {
@@ -17,7 +17,7 @@ export class ActionCableService {
   }
 
   /**
-   * Disconnect from url if a connection exists
+   * Close an open connection for the url.
    */
   disconnect(url) {
     if (this.cables.hasOwnProperty(url)) {

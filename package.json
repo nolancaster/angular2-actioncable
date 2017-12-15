@@ -1,7 +1,7 @@
 {
   "name": "angular2-actioncable",
   "version": "1.1.0",
-  "description": "Integrate ActionCable with Angular2+",
+  "description": "Simple and flexible integration for ActionCable and Angular2/4/5+ applications",
   "main": "angular2-actioncable.js",
   "scripts": {
     "build": "ng-packagr"
@@ -13,6 +13,8 @@
     "angular-actioncable",
     "angular-cable",
     "angular2",
+    "angular4",
+    "angular5",
     "angular2-actioncable",
     "angular2-cable",
     "cable",
@@ -25,10 +27,17 @@
     "rails",
     "websocket"
   ],
-  "author": "Nolan Lancaster",
+  "author": {
+    "name" : "Nolan Lancaster",
+    "email" : "nolancaster@gmail.com"
+  },
   "license": "MIT",
+  "dependencies": {
+    "actioncable": "^5.1.4"
+  },
   "peerDependencies": {
-    "@angular/core": ">2.0.0"
+    "@angular/core": ">2.4.10",
+    "rxjs": ">5.0.1"
   },
   "devDependencies": {
     "@angular/compiler": "^4.0.0",
@@ -38,8 +47,5 @@
     "rxjs": "^5.0.1",
     "typescript": "^2.6.2",
     "zone.js": "^0.8.4"
-  },
-  "dependencies": {
-    "actioncable": "^5.1.4"
   }
 }

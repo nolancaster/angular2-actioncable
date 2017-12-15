@@ -2,7 +2,7 @@
   <img src='http://i.imgur.com/hicMwNW.png' alt='ng-cable logo'/>
 </p>
 
-Simple and flexible interface for ActionCable in Angular2/4/5+ applications.
+Simple and flexible integration for ActionCable and Angular2/4/5+ applications..
 
 ## Install
 
