@@ -1,6 +1,6 @@
 {
   "name": "angular2-actioncable",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Integrate ActionCable with Angular2+",
   "main": "angular2-actioncable.js",
   "scripts": {
@@ -25,7 +25,6 @@
     "rails",
     "websocket"
   ],
-
   "author": "Nolan Lancaster",
   "license": "MIT",
   "peerDependencies": {
