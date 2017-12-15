@@ -28,8 +28,8 @@
     "websocket"
   ],
   "author": {
-    "name" : "Nolan Lancaster",
-    "email" : "nolancaster@gmail.com"
+    "name": "Nolan Lancaster",
+    "email": "nolancaster@gmail.com"
   },
   "license": "MIT",
   "dependencies": {
