@@ -1,5 +1,3 @@
-[![npm](https://img.shields.io/npm/v/npm.svg)](https://www.npmjs.com/package/angular2-actioncable)
-
 <p align="center">
   <img src='http://i.imgur.com/hicMwNW.png' alt='ng-cable logo'/>
 </p>
@@ -8,11 +6,10 @@ Simple and flexible interface for ActionCable in Angular2/4/5+ applications.
 
 ## Install
 
-NPM:
-
 ```bash
 npm install anngular2-actioncable
 ```
+[![npm](https://img.shields.io/badge/npm-v1.1.0-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
 
 ## Usage
 
