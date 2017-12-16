@@ -9,7 +9,7 @@ Simple and flexible integration for ActionCable and Angular2/4/5+ applications..
 ```bash
 npm install anngular2-actioncable
 ```
-[![npm](https://img.shields.io/badge/npm-v1.1.2-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
+[![npm](https://img.shields.io/badge/npm-v1.1.3-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
 
 ## Usage
 
@@ -18,8 +18,7 @@ Use the ActionCableService to create an ActionCable consumer and subscribe to a 
 ```typescript
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
-import { ActionCableService } from 'angular2-actioncable';
-import { Channel } from 'angular2-actioncable/src/cable';
+import { ActionCableService, Channel } from 'angular2-actioncable';
 import { MessageService } from './shared/messages/message.service';
 
 @Component({
