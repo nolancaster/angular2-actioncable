@@ -2,14 +2,14 @@
   <img src='http://i.imgur.com/hicMwNW.png' alt='ng-cable logo'/>
 </p>
 
-Simple and flexible integration for ActionCable and Angular2/4/5+ applications..
+Simple and flexible integration for ActionCable and Angular2/4/5+ applications.
 
 ## Install
 
 ```bash
 npm install angular2-actioncable
 ```
-[![npm](https://img.shields.io/badge/npm-v1.1.4-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
+[![npm](https://img.shields.io/badge/npm-v1.1.5-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
 
 ## Usage
 
@@ -57,7 +57,7 @@ export class AppComponent implements OnInit, OnDestroy {
 ## API
 
 ### ActionCableService
-#### ``.cable(url: string): Cable``
+#### ``.cable(url: string, params?: {}): Cable``
   Open a new ActionCable connection to the url. Any number of connections can be created.
 
 #### ``.disconnect(url: string): void``
