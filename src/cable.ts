@@ -20,8 +20,8 @@ export class Cable {
   /**
    * Close the connection.
    */
-  disconnect() {
-    return this.baseCable.disconnect();
+  disconnect(): void {
+    this.baseCable.close();
   }
 }
 
@@ -43,17 +43,17 @@ export class Channel {
     });
   }
 
-  /**
+  /**t
    * Close the connection.
    */
-  send(data: any) {
+  send(data: any): void {
     this.baseChannel.send(data);
   }
 
   /**
    * Close the connection.
    */
-  unsubscribe() {
+  unsubscribe(): void {
     this.cable.baseCable.subscriptions.remove(this.baseChannel);
   }
 }
