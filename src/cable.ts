@@ -11,7 +11,7 @@ export class Cable {
   }
 
   /**
-   * Create a new subscription to a channel, optionally with topic paramters.
+   * Create a new subscription to a channel, optionally with topic parameters.
    */
   channel(name: string, params = {}): Channel {
     return new Channel(this, name, params);
@@ -43,15 +43,22 @@ export class Channel {
     });
   }
 
-  /**t
-   * Close the connection.
+  /**
+   * Broadcast message to other clients subscribed to this channel.
    */
   send(data: any): void {
     this.baseChannel.send(data);
   }
 
   /**
-   * Close the connection.
+   * Perform a channel action with the optional data passed as an attribute
+   */
+  perform(action: string, data?: any): void {
+    this.baseChannel.perform(action, data);
+  }
+
+  /**
+   * Unsubscribe from the channel.
    */
   unsubscribe(): void {
     this.cable.baseCable.subscriptions.remove(this.baseChannel);

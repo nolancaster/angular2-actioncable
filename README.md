@@ -66,7 +66,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 ### Cable
 #### ``channel(name: string, params?: {}): Channel``
-  Create a new subscription to a channel, optionally with topic paramters.
+  Create a new subscription to a channel, optionally with topic parameters.
 ####
 
 #### ``.disconnect(): void``
@@ -81,6 +81,10 @@ export class AppComponent implements OnInit, OnDestroy {
 
 #### ``send(data: any): void``
   Broadcast message to other clients subscribed to this channel.
+####
+
+#### ``perform(action: string, data?: {}): void``
+  Perform a channel action with the optional data passed as an attribute
 ####
 
 #### ``.unsubscribe(): void``
