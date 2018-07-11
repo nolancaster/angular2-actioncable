@@ -64,10 +64,6 @@ export class AppComponent implements OnInit, OnDestroy {
   Close an open connection for the url.
 ####
 
-#### ``.disconnected(): Observable<any>``
-  Emits when the WebSocket connection is closed.
-####
-
 ### Cable
 #### ``.channel(name: string, params?: {}): Channel``
   Create a new subscription to a channel, optionally with topic parameters.
@@ -77,10 +73,22 @@ export class AppComponent implements OnInit, OnDestroy {
   Close the connection.
 ####
 
+#### ``.disconnected(): Observable<any>``
+  Emits when the WebSocket connection is closed.
+####
+
 ### Channel
-#### ``.received: Observable<any>``
+#### ``.received(): Observable<any>``
   Emits messages that have been broadcast to the channel..
   For easy clean-up, when this Observable is completed the ActionCable channel will also be closed.
+####
+
+#### ``.send(data: any): void``
+  Broadcast message to other clients subscribed to this channel.
+####
+
+#### ``.perform(action: string, data?: {}): void``
+  Perform a channel action with the optional data passed as an attribute.
 ####
 
 #### ``.initialized(): Observable<any>``
@@ -97,14 +105,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
 #### ``.rejected(): Observable<any>``
    Emits when the subscription is rejected by the server.
-####
-
-#### ``.send(data: any): void``
-  Broadcast message to other clients subscribed to this channel.
-####
-
-#### ``.perform(action: string, data?: {}): void``
-  Perform a channel action with the optional data passed as an attribute.
 ####
 
 #### ``.unsubscribe(): void``

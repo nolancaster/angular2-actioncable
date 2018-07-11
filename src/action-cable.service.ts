@@ -19,7 +19,7 @@ export class ActionCableService {
   /**
    * Close an open connection for the url.
    */
-  disconnect(url): void {
+  disconnect(url: string): void {
     if (this.cables.hasOwnProperty(url)) {
       this.cables[url].disconnect();
       delete this.cables[url];
