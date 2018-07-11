@@ -57,15 +57,17 @@ export class AppComponent implements OnInit, OnDestroy {
 ## API
 
 ### ActionCableService
-#### ``.cable(url: string, params?: {}): Cable``
+#### ``.cable(url: string, params?: any): Cable``
   Open a new ActionCable connection to the url. Any number of connections can be created.
+  If a function is supplied for the URL params, it will be reevaluated before any reconnection attempts.
+####
 
 #### ``.disconnect(url: string): void``
   Close an open connection for the url.
 ####
 
 ### Cable
-#### ``.channel(name: string, params?: {}): Channel``
+#### ``.channel(name: string, params?: any): Channel``
   Create a new subscription to a channel, optionally with topic parameters.
 ####
 
@@ -87,7 +89,7 @@ export class AppComponent implements OnInit, OnDestroy {
   Broadcast message to other clients subscribed to this channel.
 ####
 
-#### ``.perform(action: string, data?: {}): void``
+#### ``.perform(action: string, data?: any): void``
   Perform a channel action with the optional data passed as an attribute.
 ####
 
