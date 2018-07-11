@@ -58,7 +58,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 ### ActionCableService
 #### ``.cable(url: string, params?: any): Cable``
-  Open a new ActionCable connection to the url. Any number of connections can be created.
+  Open a new ActionCable connection to the url. Any number of connections can be created.  
   If a function is supplied for the URL params, it will be reevaluated before any reconnection attempts.
 ####
 
@@ -81,7 +81,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 ### Channel
 #### ``.received(): Observable<any>``
-  Emits messages that have been broadcast to the channel..
+  Emits messages that have been broadcast to the channel.  
   For easy clean-up, when this Observable is completed the ActionCable channel will also be closed.
 ####
 
