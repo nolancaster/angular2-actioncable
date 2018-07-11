@@ -10,7 +10,7 @@ export class ActionCableService {
    */
   cable(url: string, params?: any): Cable {
     if (!this.cables.hasOwnProperty(url)) {
-      this.cables[url] = new Cable(this.buildUrl(url, params));
+      this.cables[url] = new Cable(url, params);
     }
 
     return this.cables[url];
@@ -19,22 +19,10 @@ export class ActionCableService {
   /**
    * Close an open connection for the url.
    */
-  disconnect(url) {
+  disconnect(url): void {
     if (this.cables.hasOwnProperty(url)) {
       this.cables[url].disconnect();
       delete this.cables[url];
     }
-  }
-
-  protected buildUrl(url: string, params?: any): string {
-    if (!params) {
-      return url;
-    }
-
-    const paramString = Object.keys(params)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
-      .join('&');
-
-    return [url, paramString].join('?');
   }
 }
