@@ -9,7 +9,7 @@ Simple and flexible integration for ActionCable and Angular2/4/5+ applications.
 ```bash
 npm install angular2-actioncable
 ```
-[![npm](https://img.shields.io/badge/npm-v1.1.5-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
+[![npm](https://img.shields.io/badge/npm-v1.2.0-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
 
 ## Usage
 
