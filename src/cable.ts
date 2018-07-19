@@ -40,7 +40,7 @@ export class Cable {
    * Close the connection.
    */
   disconnect(): void {
-    this.baseCable.close();
+    this.baseCable.disconnect();
   }
 
   protected buildUrl(url: string, params?: any): string {
