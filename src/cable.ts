@@ -44,12 +44,12 @@ export class Cable {
   }
 
   protected buildUrl(url: string, params?: any): string {
-    if (!params) {
-      return url;
-    }
-
     if (params instanceof Function) {
       params = params();
+    }
+
+    if (!params) {
+      return url;
     }
 
     const paramString = Object.keys(params)
