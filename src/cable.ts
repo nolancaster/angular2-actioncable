@@ -1,7 +1,6 @@
 import * as ActionCableNs from 'actioncable';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import 'rxjs/add/operator/debounceTime';
+import { Observable, Subject } from 'rxjs';
+import { debounceTime } from 'rxjs/operators';
 
 const ActionCable = ActionCableNs;
 
@@ -25,7 +24,7 @@ export class Cable {
    */
   channel(name: string, params = {}): Channel {
     const channel = new Channel(this, name, params);
-    channel.disconnected().subscribe(data => this.disconnectedSource.next(data));
+    channel.disconnected().subscribe((data) => this.disconnectedSource.next(data));
     return channel;
   }
 
@@ -33,7 +32,7 @@ export class Cable {
    * Emits when the WebSocket connection is closed.
    */
   disconnected(): Observable<any> {
-    return this.disconnectedSource.asObservable().debounceTime(100);
+    return this.disconnectedSource.asObservable().pipe(debounceTime(100));
   }
 
   /**
@@ -53,7 +52,7 @@ export class Cable {
     }
 
     const paramString = Object.keys(params)
-      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
       .join('&');
 
     return [url, paramString].join('?');
@@ -70,14 +69,14 @@ export class Channel {
   private eventTypes = ['initialized', 'connected', 'disconnected', 'rejected'];
 
   constructor(public cable: Cable, public name: string, public params = {}) {
-    const channelParams = Object.assign({}, params, {channel: name});
-    this.messages = Observable.create(observer => {
+    const channelParams = Object.assign({}, params, { channel: name });
+    this.messages = Observable.create((observer) => {
       const mixin = {
-        received: (data: any) => observer.next(data)
+        received: (data: any) => observer.next(data),
       };
 
-      this.eventTypes.forEach(type => {
-        mixin[type] = (data: any) => this[`${type}Source`].next(data)
+      this.eventTypes.forEach((type) => {
+        mixin[type] = (data: any) => this[`${type}Source`].next(data);
       });
 
       this.baseChannel = this.cable.baseCable.subscriptions.create(channelParams, mixin);
