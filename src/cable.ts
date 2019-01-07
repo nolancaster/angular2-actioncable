@@ -24,7 +24,7 @@ export class Cable {
    */
   channel(name: string, params = {}): Channel {
     const channel = new Channel(this, name, params);
-    channel.disconnected().subscribe((data) => this.disconnectedSource.next(data));
+    channel.disconnected().subscribe(data => this.disconnectedSource.next(data));
     return channel;
   }
 
@@ -52,7 +52,7 @@ export class Cable {
     }
 
     const paramString = Object.keys(params)
-      .map((key) => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(params[key])}`)
       .join('&');
 
     return [url, paramString].join('?');

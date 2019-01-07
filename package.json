@@ -1,7 +1,7 @@
 {
   "name": "angular2-actioncable",
-  "version": "1.3.0",
-  "description": "Simple and flexible integration for ActionCable and Angular2/4/5+ applications",
+  "version": "6.0.0",
+  "description": "Simple and flexible integration for ActionCable and Angular applications",
   "main": "angular2-actioncable.js",
   "scripts": {
     "build": "ng-packagr"
@@ -46,8 +46,8 @@
     "@angular/compiler-cli": "^6.0.0",
     "@angular/core": "^6.0.0",
     "ng-packagr": "^1.6.0",
-    "rxjs": "^6.2.2",
-    "typescript": "~2.7.2",
+    "rxjs": "^6.0.0",
+    "typescript": "2.7.x",
     "zone.js": "^0.8.4"
   }
 }
