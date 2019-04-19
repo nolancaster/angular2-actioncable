@@ -1,6 +1,6 @@
 {
   "name": "angular2-actioncable",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Simple and flexible integration for ActionCable and Angular applications",
   "main": "angular2-actioncable.js",
   "scripts": {
@@ -39,14 +39,14 @@
   },
   "peerDependencies": {
     "@angular/core": ">2.4.10",
-    "rxjs": ">6.0.0"
+    "rxjs": ">6.0.0 <6.3.3"
   },
   "devDependencies": {
     "@angular/compiler": "^6.0.0",
     "@angular/compiler-cli": "^6.0.0",
     "@angular/core": "^6.0.0",
     "ng-packagr": "^1.6.0",
-    "rxjs": "6.4.0",
+    "rxjs": "6.3.2",
     "typescript": "2.8.x",
     "zone.js": "^0.8.4"
   }

@@ -70,7 +70,7 @@ export class Channel {
 
   constructor(public cable: Cable, public name: string, public params = {}) {
     const channelParams = Object.assign({}, params, { channel: name });
-    this.messages = Observable.create((observer) => {
+    this.messages = new Observable((observer) => {
       const mixin = {
         received: (data: any) => observer.next(data),
       };

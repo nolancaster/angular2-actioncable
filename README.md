@@ -9,7 +9,7 @@ Simple and flexible integration for ActionCable and Angular applications.
 ```bash
 npm install angular2-actioncable
 ```
-[![npm](https://img.shields.io/badge/npm-v6.0.1-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
+[![npm](https://img.shields.io/badge/npm-v6.0.2-blue.svg)](https://nodei.co/npm/angular2-actioncable/)
 
 If using an Angular version prior to 6:
 ```bash
@@ -117,3 +117,10 @@ export class AppComponent implements OnInit, OnDestroy {
 #### ``.unsubscribe(): void``
   Unsubscribe from the channel.
 ####
+
+## Known Issues
+
+* If using rxjs 6.3.3 or above, unsubscribing from the `received` Observable will **not** automatically
+unsubscribe from the ActionCable channel. You can try using version 6.0.1 of this plugin, which uses rxjs 6.4.0,
+but there are still issues with unsubscribe not being called if you combine the received Observable with another.
+This can potentially result in memory leaks.
